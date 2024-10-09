@@ -1,5 +1,4 @@
 package Project_7;
-
 import java.util.Scanner;
 
 public class Streaming extends Subscription implements ICREATE,IUPDATE,ICANCEL,ISTATUS,IREMOVE {
@@ -48,10 +47,8 @@ public class Streaming extends Subscription implements ICREATE,IUPDATE,ICANCEL,I
         read.nextLine();
         System.out.print("Enter new plan (Solo, Family, etc.): ");
         String plan = read.nextLine();
-
         String startDate = ErrorHandling.getValidDate(read, "Enter new start date (yyyy-MM-dd): ");
         String endDate = ErrorHandling.getValidDate(read, "Enter new end date (yyyy-MM-dd): ");
-
         Streaming streaming = new Streaming(startDate, endDate, "Active", name, deviceLimit, plan);
         database.updateStreaming(streaming, 0);
         System.out.println("Updated the Chosen Streaming Site!!");
